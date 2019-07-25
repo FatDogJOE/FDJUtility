@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'FDJUtility_Example' do
+  pod 'FDJUtility', :path => '../'
+
+  target 'FDJUtility_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
