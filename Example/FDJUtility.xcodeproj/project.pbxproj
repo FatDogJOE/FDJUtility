@@ -41,10 +41,10 @@
 		607FACEB1AFB9204008FA782 /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
 		7CFD5EA9A421CBE3E72D58E4 /* Pods-FDJUtility_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FDJUtility_Example.release.xcconfig"; path = "Target Support Files/Pods-FDJUtility_Example/Pods-FDJUtility_Example.release.xcconfig"; sourceTree = "<group>"; };
 		92646811F196C8580D1EEF73 /* Pods_FDJUtility_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FDJUtility_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		A16BC4919A21EC70987B1F3E /* FDJUtility.podspec */ = {isa = PBXFileReference; includeInIndex = 1; name = FDJUtility.podspec; path = ../FDJUtility.podspec; sourceTree = "<group>"; };
+		A16BC4919A21EC70987B1F3E /* FDJUtility.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = FDJUtility.podspec; path = ../FDJUtility.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		A236299BEAA1B37946600125 /* Pods-FDJUtility_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FDJUtility_Tests.release.xcconfig"; path = "Target Support Files/Pods-FDJUtility_Tests/Pods-FDJUtility_Tests.release.xcconfig"; sourceTree = "<group>"; };
-		A398D7191DC2703DD72F46BA /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; name = README.md; path = ../README.md; sourceTree = "<group>"; };
-		C97C06B14C64148F85DB98D7 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
+		A398D7191DC2703DD72F46BA /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		C97C06B14C64148F85DB98D7 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		EB08F4B73F13D69DB4AAC7D1 /* Pods-FDJUtility_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FDJUtility_Tests.debug.xcconfig"; path = "Target Support Files/Pods-FDJUtility_Tests/Pods-FDJUtility_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		FF7076A214EED9CB6397BE23 /* Pods-FDJUtility_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FDJUtility_Example.debug.xcconfig"; path = "Target Support Files/Pods-FDJUtility_Example/Pods-FDJUtility_Example.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -156,7 +156,6 @@
 				EB08F4B73F13D69DB4AAC7D1 /* Pods-FDJUtility_Tests.debug.xcconfig */,
 				A236299BEAA1B37946600125 /* Pods-FDJUtility_Tests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -171,7 +170,7 @@
 				607FACCC1AFB9204008FA782 /* Sources */,
 				607FACCD1AFB9204008FA782 /* Frameworks */,
 				607FACCE1AFB9204008FA782 /* Resources */,
-				C971FBF47760192C6617C380 /* [CP] Embed Pods Frameworks */,
+				1F033D846E95F18D895070D4 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -227,6 +226,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -262,6 +262,30 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		1F033D846E95F18D895070D4 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-FDJUtility_Example/Pods-FDJUtility_Example-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/FDJUtility/FDJUtility.framework",
+				"${BUILT_PRODUCTS_DIR}/SAMKeychain/SAMKeychain.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FDJUtility.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SAMKeychain.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-FDJUtility_Example/Pods-FDJUtility_Example-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		89F90A6D944EC49BC44AC1E1 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -304,28 +328,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		C971FBF47760192C6617C380 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-FDJUtility_Example/Pods-FDJUtility_Example-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/FDJUtility/FDJUtility.framework",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FDJUtility.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-FDJUtility_Example/Pods-FDJUtility_Example-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */

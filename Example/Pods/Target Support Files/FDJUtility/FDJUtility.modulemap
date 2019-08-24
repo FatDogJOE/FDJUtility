@@ -1,0 +1,6 @@
+framework module FDJUtility {
+  umbrella header "FDJUtility-umbrella.h"
+
+  export *
+  module * { export * }
+}

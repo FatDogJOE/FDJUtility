@@ -1,0 +1,36 @@
+{
+  "name": "FDJUtility",
+  "version": "0.1.0",
+  "summary": "A short description of FDJUtility.",
+  "description": "TODO: Add long description of the pod here.",
+  "homepage": "https://github.com/Joe/FDJUtility",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "Joe": "likethephoenix@163.com"
+  },
+  "source": {
+    "git": "https://github.com/Joe/FDJUtility.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "8.0"
+  },
+  "subspecs": [
+    {
+      "name": "Categories",
+      "source_files": "FDJUtility/Classes/Categories/**/*"
+    },
+    {
+      "name": "APPUtility",
+      "source_files": "FDJUtility/Classes/APPUtility/**/*",
+      "dependencies": {
+        "SAMKeychain": [
+          "~> 1.5.3"
+        ]
+      }
+    }
+  ]
+}

@@ -30,7 +30,16 @@ TODO: Add long description of the pod here.
 
   s.ios.deployment_target = '8.0'
 
-  s.source_files = 'FDJUtility/Classes/**/*'
+#  s.source_files = 'FDJUtility/Classes/**/*'
+
+  s.subspec 'Categories' do |categories|
+      categories.source_files = 'FDJUtility/Classes/Categories/**/*'
+  end
+  
+  s.subspec 'APPUtility' do |app|
+      app.source_files = 'FDJUtility/Classes/APPUtility/**/*'
+      app.dependency 'SAMKeychain', '~> 1.5.3'
+  end
   
   # s.resource_bundles = {
   #   'FDJUtility' => ['FDJUtility/Assets/*.png']
