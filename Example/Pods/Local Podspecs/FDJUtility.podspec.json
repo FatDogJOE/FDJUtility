@@ -16,7 +16,11 @@
     "tag": "0.1.0"
   },
   "platforms": {
-    "ios": "8.0"
+    "ios": "9.0"
+  },
+  "ios": {
+    "source_files": "FDJUtility/Classes/Headers/**/*",
+    "public_header_files": "FDJUtility/Classes/Headers/**/*"
   },
   "subspecs": [
     {
@@ -31,6 +35,11 @@
           "~> 1.5.3"
         ]
       }
+    },
+    {
+      "name": "OCSupport",
+      "source_files": "FDJUtility/Classes/OCSupport/**/*",
+      "public_header_files": "FDJUtility/Classes/OCSupport/**/*.{h}"
     }
   ]
 }

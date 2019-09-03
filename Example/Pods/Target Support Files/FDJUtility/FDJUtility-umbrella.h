@@ -10,6 +10,7 @@
 #endif
 #endif
 
+#import "OCTypes.h"
 
 FOUNDATION_EXPORT double FDJUtilityVersionNumber;
 FOUNDATION_EXPORT const unsigned char FDJUtilityVersionString[];

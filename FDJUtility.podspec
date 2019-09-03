@@ -28,9 +28,10 @@ TODO: Add long description of the pod here.
   s.source           = { :git => 'https://github.com/Joe/FDJUtility.git', :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
-  s.ios.deployment_target = '8.0'
+  s.ios.deployment_target = '9.0'
 
-#  s.source_files = 'FDJUtility/Classes/**/*'
+  s.ios.source_files = 'FDJUtility/Classes/Headers/**/*'
+  s.ios.public_header_files = 'FDJUtility/Classes/Headers/**/*'
 
   s.subspec 'Categories' do |categories|
       categories.source_files = 'FDJUtility/Classes/Categories/**/*'
@@ -39,6 +40,11 @@ TODO: Add long description of the pod here.
   s.subspec 'APPUtility' do |app|
       app.source_files = 'FDJUtility/Classes/APPUtility/**/*'
       app.dependency 'SAMKeychain', '~> 1.5.3'
+  end
+  
+  s.subspec 'OCSupport' do |ocsupport|
+      ocsupport.source_files = 'FDJUtility/Classes/OCSupport/**/*'
+      ocsupport.public_header_files = 'FDJUtility/Classes/OCSupport/**/*.{h}'
   end
   
   # s.resource_bundles = {

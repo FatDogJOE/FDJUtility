@@ -53,7 +53,7 @@ public class FDJSerialTaskManager: NSObject {
         
     }
 
-    @objc public func add(task:@escaping FDJTaskOperation) {
+    public func add(task:@escaping FDJTaskOperation) {
         
         let shouldPerformNext = (waitingTasks.count == 0 && self.currentTask == nil)
         
@@ -74,11 +74,35 @@ public class FDJSerialTaskManager: NSObject {
                     self.next(info: [:])
                 }
             }
-            
         }
     }
     
-    @objc public func insert(task:@escaping FDJTaskOperation) {
+    public func batchAdd(tasks:[FDJTaskOperation]) {
+        
+        let shouldPerformNext = (waitingTasks.count == 0 && self.currentTask == nil)
+        
+        objc_sync_enter(waitingTasks)
+        
+        waitingTasks.append(contentsOf: tasks)
+        
+        objc_sync_exit(waitingTasks)
+        
+        if shouldPerformNext {
+            
+            if let workQueue = self.queue {
+                workQueue.async {
+                    self.next(info: [:])
+                }
+            }else {
+                DispatchQueue.main.async {
+                    self.next(info: [:])
+                }
+            }
+        }
+        
+    }
+    
+    public func insert(task:@escaping FDJTaskOperation) {
         
         let shouldPerformNext = (waitingTasks.count == 0 && self.currentTask == nil)
         
@@ -104,7 +128,32 @@ public class FDJSerialTaskManager: NSObject {
         
     }
     
-    @objc public func clear() {
+    public func batchInsert(tasks:[FDJTaskOperation]) {
+        
+        let shouldPerformNext = (waitingTasks.count == 0 && self.currentTask == nil)
+        
+        objc_sync_enter(waitingTasks)
+        
+        waitingTasks.insert(contentsOf: tasks, at: 0)
+        
+        objc_sync_exit(waitingTasks)
+        
+        if shouldPerformNext {
+            
+            if let workQueue = self.queue {
+                workQueue.async {
+                    self.next(info: [:])
+                }
+            }else {
+                DispatchQueue.main.async {
+                    self.next(info: [:])
+                }
+            }
+        }
+        
+    }
+    
+    public func clear() {
         
         objc_sync_enter(waitingTasks)
         
@@ -112,6 +161,32 @@ public class FDJSerialTaskManager: NSObject {
         
         objc_sync_exit(waitingTasks)
         
+    }
+    
+}
+
+extension FDJSerialTaskManager {
+    
+    @objc public func OC_BatchAdd(tasks:[Any]) {
+        
+        if let opTasks = (tasks as? [FDJTaskOperation]) {
+            self.batchAdd(tasks: opTasks)
+        }
+        
+    }
+    
+    @objc public func OC_BatchInsert(tasks:[Any]) {
+        if let opTasks = (tasks as? [FDJTaskOperation]) {
+            self.batchInsert(tasks: opTasks)
+        }
+    }
+    
+    @objc public func OC_Insert(task:@escaping FDJTaskOperation) {
+        self.insert(task: task)
+    }
+    
+    @objc public func OC_Add(task:@escaping FDJTaskOperation) {
+        self.add(task: task)
     }
     
 }
