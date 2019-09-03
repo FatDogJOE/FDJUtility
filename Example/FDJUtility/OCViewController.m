@@ -7,7 +7,7 @@
 //
 
 #import "OCViewController.h"
-#import <FDJUtility/OCTypes.h>
+#import <FDJUtility/OCSupport.h>
 #import <FDJUtility-Swift.h>
 
 @interface OCViewController ()
@@ -19,6 +19,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    NSDictionary * dic = [NSDictionary dictionary];
+    
+    dic.stringValue(@"");
     
     TaskOCOperation task = ^(TaskOCCompletion completion, NSDictionary * info) {
     };
