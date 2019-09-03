@@ -2,6 +2,7 @@ use_frameworks!
 
 target 'FDJUtility_Example' do
   pod 'FDJUtility', :path => '../'
+  pod 'SnapKit', '~> 4.2.0'
 
   target 'FDJUtility_Tests' do
     inherit! :search_paths
