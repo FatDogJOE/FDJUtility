@@ -22,7 +22,7 @@
     
     NSDictionary * dic = [NSDictionary dictionary];
     
-    dic.stringValue(@"");
+    dic.dicValue(@"dic").dicValue(@"test").stringValue(@"");
     
     TaskOCOperation task = ^(TaskOCCompletion completion, NSDictionary * info) {
     };
