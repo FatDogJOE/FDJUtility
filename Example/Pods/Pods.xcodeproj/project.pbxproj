@@ -911,6 +911,38 @@
 			};
 			name = Debug;
 		};
+		7F3D05813175B718338F2C56C930F14A /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 980226074D77FBCEF20B0E9231B207EB /* FDJUtility.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/FDJUtility/FDJUtility-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/FDJUtility/FDJUtility-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/FDJUtility/FDJUtility.modulemap";
+				PRODUCT_MODULE_NAME = FDJUtility;
+				PRODUCT_NAME = FDJUtility;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
 		7FD215B2A583139A886670D46ED075AE /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 7BBA56F9FBE509FA7FDBC6D59C86013C /* Pods-FDJUtility_Example.release.xcconfig */;
@@ -1000,69 +1032,6 @@
 				MODULEMAP_FILE = "Target Support Files/SAMKeychain/SAMKeychain.modulemap";
 				PRODUCT_MODULE_NAME = SAMKeychain;
 				PRODUCT_NAME = SAMKeychain;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		A0538C8930EFF39D4B7E352918A206CB /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 980226074D77FBCEF20B0E9231B207EB /* FDJUtility.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/FDJUtility/FDJUtility-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/FDJUtility/FDJUtility-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/FDJUtility/FDJUtility.modulemap";
-				PRODUCT_MODULE_NAME = FDJUtility;
-				PRODUCT_NAME = FDJUtility;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		A9959678D3A5F83D6EBE8E586B80BB40 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 980226074D77FBCEF20B0E9231B207EB /* FDJUtility.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/FDJUtility/FDJUtility-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/FDJUtility/FDJUtility-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/FDJUtility/FDJUtility.modulemap";
-				PRODUCT_MODULE_NAME = FDJUtility;
-				PRODUCT_NAME = FDJUtility;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
@@ -1262,6 +1231,37 @@
 			};
 			name = Debug;
 		};
+		C9B569D4D7C1E63135E066E4EDC43802 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 980226074D77FBCEF20B0E9231B207EB /* FDJUtility.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/FDJUtility/FDJUtility-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/FDJUtility/FDJUtility-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/FDJUtility/FDJUtility.modulemap";
+				PRODUCT_MODULE_NAME = FDJUtility;
+				PRODUCT_NAME = FDJUtility;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
 		CD1850D468EEBE9D652F8A52B14EE308 /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 1F4083B83BFCF74DA83B67A21E8C06C9 /* SnapKit.xcconfig */;
@@ -1336,8 +1336,8 @@
 		65A75072E9045EE6739BAD1DF595A302 /* Build configuration list for PBXNativeTarget "FDJUtility" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				A0538C8930EFF39D4B7E352918A206CB /* Debug */,
-				A9959678D3A5F83D6EBE8E586B80BB40 /* Release */,
+				C9B569D4D7C1E63135E066E4EDC43802 /* Debug */,
+				7F3D05813175B718338F2C56C930F14A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
