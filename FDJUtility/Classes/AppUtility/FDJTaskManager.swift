@@ -7,7 +7,7 @@
 
 import UIKit
 
-public typealias FDJTaskCompletion = ([String:Any])->Void
+public typealias FDJTaskCompletion = ([String:Any], Bool)->Void
 public typealias FDJTaskOperation = (@escaping FDJTaskCompletion, [String:Any])->Void
 
 public class FDJSerialTaskManager: NSObject {
@@ -30,17 +30,13 @@ public class FDJSerialTaskManager: NSObject {
             
             _ = self.waitingTasks.removeFirst()
             
-            let complection : FDJTaskCompletion = { (completionInfo) in
+            let complection : FDJTaskCompletion = { (completionInfo, shouldCancelOddTasks) in
                 
-                if let workQueue = self.queue {
-                    workQueue.async {
-                        self.next(info: completionInfo)
-                    }
-                }else {
-                    DispatchQueue.main.async {
-                        self.next(info: completionInfo)
-                    }
+                if shouldCancelOddTasks {
+                    self.clear()
                 }
+                
+                self.performNext(info: completionInfo)
                 
             }
             
@@ -50,6 +46,14 @@ public class FDJSerialTaskManager: NSObject {
         }
         
         objc_sync_exit(waitingTasks)
+        
+    }
+    
+    private func performNext(info:[String:Any]) {
+        
+        (self.queue ?? DispatchQueue.main).async {
+            self.next(info: info)
+        }
         
     }
 
@@ -65,15 +69,8 @@ public class FDJSerialTaskManager: NSObject {
         
         if shouldPerformNext {
             
-            if let workQueue = self.queue {
-                workQueue.async {
-                    self.next(info: [:])
-                }
-            }else {
-                DispatchQueue.main.async {
-                    self.next(info: [:])
-                }
-            }
+            self.performNext(info: [:])
+            
         }
     }
     
@@ -89,15 +86,8 @@ public class FDJSerialTaskManager: NSObject {
         
         if shouldPerformNext {
             
-            if let workQueue = self.queue {
-                workQueue.async {
-                    self.next(info: [:])
-                }
-            }else {
-                DispatchQueue.main.async {
-                    self.next(info: [:])
-                }
-            }
+            self.performNext(info: [:])
+            
         }
         
     }
@@ -114,15 +104,7 @@ public class FDJSerialTaskManager: NSObject {
         
         if shouldPerformNext {
             
-            if let workQueue = self.queue {
-                workQueue.async {
-                    self.next(info: [:])
-                }
-            }else {
-                DispatchQueue.main.async {
-                    self.next(info: [:])
-                }
-            }
+            self.performNext(info: [:])
             
         }
         
@@ -140,15 +122,8 @@ public class FDJSerialTaskManager: NSObject {
         
         if shouldPerformNext {
             
-            if let workQueue = self.queue {
-                workQueue.async {
-                    self.next(info: [:])
-                }
-            }else {
-                DispatchQueue.main.async {
-                    self.next(info: [:])
-                }
-            }
+            self.performNext(info: [:])
+            
         }
         
     }

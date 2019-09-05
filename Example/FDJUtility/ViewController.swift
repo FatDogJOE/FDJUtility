@@ -39,7 +39,7 @@ class PresentVC : UIViewController {
     
     @objc func dismissVC() {
         self.dismiss(animated: true) {
-            self.complectionHandler([:])
+            self.complectionHandler([:], false)
         }
     }
     
