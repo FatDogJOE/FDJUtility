@@ -11,6 +11,8 @@
 #endif
 
 #import "NSDictionary+FDJUtility.h"
+#import "NSString+FDJUtility.h"
+#import "UIColor+FDJUtility.h"
 #import "OCSupport.h"
 #import "OCTypes.h"
 

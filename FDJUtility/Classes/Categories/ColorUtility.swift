@@ -11,12 +11,7 @@ import UIKit
 public extension UIColor {
     
     @objc class func hex(hex:UInt32)->UIColor {
-        
-        let r = (hex >> 16) & 0xFF
-        let g = (hex >> 8) & 0xFF
-        let b = hex & 0xFF
-        
-        return UIColor(red: CGFloat(r) / 255.0, green: CGFloat(g) / 255.0, blue: CGFloat(b) / 255.0, alpha: 1)
+        return UIColor.hex(hex: hex, alpha: 1)
     }
     
     @objc class func hex(hex:UInt32, alpha:Float)->UIColor {

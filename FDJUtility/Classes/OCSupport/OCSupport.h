@@ -10,5 +10,7 @@
 
 #import "OCTypes.h"
 #import "NSDictionary+FDJUtility.h"
+#import "NSString+FDJUtility.h"
+#import "UIColor+FDJUtility.h"
 
 #endif /* OCSupport_h */

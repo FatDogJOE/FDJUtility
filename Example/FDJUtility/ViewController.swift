@@ -10,81 +10,25 @@ import UIKit
 import SnapKit
 import FDJUtility
 
-class PresentVC : UIViewController {
-    
-    let button : UIButton
-    let complectionHandler : FDJTaskCompletion
-    
-    init(completion: @escaping FDJTaskCompletion) {
-        self.button = UIButton(type: .custom)
-        self.complectionHandler = completion
-        super.init(nibName: nil, bundle: nil)
-    }
-    
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        self.view.addSubview(self.button)
-        self.button.snp.makeConstraints { (mk) in
-            mk.center.equalTo(self.view)
-            mk.size.equalTo(CGSize(width: 100, height: 50))
-        }
-        self.button.setTitle("Dismiss", for: .normal)
-        self.button.setTitleColor(UIColor.blue, for: .normal)
-        self.button.addTarget(self, action: #selector(dismissVC), for: .touchUpInside)
-    }
-    
-    @objc func dismissVC() {
-        self.dismiss(animated: true) {
-            self.complectionHandler([:], false)
-        }
-    }
-    
-}
-
 class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        let task1 : FDJTaskOperation = {[weak self] (complection, info)  in
-            let vc = PresentVC(completion: complection)
-            self?.present(vc, animated: true, completion: nil)
-        }
+        let str = "123456"
         
-        let task2 : FDJTaskOperation = {[weak self] (complection, info) in
-            let vc = PresentVC(completion: complection)
-            self?.present(vc, animated: true, completion: nil)
-        }
+        let md5Data = str.md5Data()
         
-        let task3 : FDJTaskOperation = {[weak self] (complection, info) in
-            let vc = PresentVC(completion: complection)
-            self?.present(vc, animated: true, completion: nil)
-        }
+        let bytes = md5Data.bytes()
+        let hex = md5Data.hex()
         
-        let task4 : FDJTaskOperation = {[weak self] (complection, info) in
-            let vc = PresentVC(completion: complection)
-            self?.present(vc, animated: true, completion: nil)
-        }
+//        let md5Str = str.md5()
+//        let sha1Str = str.sha1()
+//        let sha256Str = str.sha256()
+//        let sha512Str = str.sha512()
         
-        let task5 : FDJTaskOperation = {[weak self] (complection, info) in
-            let vc = PresentVC(completion: complection)
-            self?.present(vc, animated: true, completion: nil)
-        }
-        
-        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 3) {
-            FDJSerialTaskManager.shared.add(task: task1)
-            FDJSerialTaskManager.shared.add(task: task2)
-            FDJSerialTaskManager.shared.add(task: task3)
-            FDJSerialTaskManager.shared.add(task: task4)
-            FDJSerialTaskManager.shared.add(task: task5)
-        }
-        
-        
+        print("")
     }
 
     override func didReceiveMemoryWarning() {

@@ -8,7 +8,7 @@
 import Foundation
 import SAMKeychain
 
-@objc public enum DeviceModel:Int {
+public enum DeviceModel:Int {
     case iPhone
     case iPad
     case iPodTouch
@@ -30,12 +30,12 @@ import SAMKeychain
 
 public class DeviceUtility : NSObject {
     
-    @objc public static func systemVersion() -> String {
+    public static func systemVersion() -> String {
         let version = UIDevice.current.systemName
         return version
     }
     
-    @objc public static func deviceUUID() -> String {
+    public static func deviceUUID() -> String {
         let uuid = SAMKeychain.password(forService: "DeviceUtility", account: "GetUUID") ?? ""
         
         if uuid.count > 0 {
@@ -49,7 +49,7 @@ public class DeviceUtility : NSObject {
         }
     }
     
-    @objc public static func bangDevice() -> Bool {
+    public static func bangDevice() -> Bool {
         if UIApplication.shared.statusBarFrame.height < 44 {
             return false
         }else {
@@ -57,12 +57,12 @@ public class DeviceUtility : NSObject {
         }
     }
     
-    @objc public static func navigationBarHeight() -> CGFloat {
+    public static func navigationBarHeight() -> CGFloat {
         return UIApplication.shared.statusBarFrame.size.height + 44
     }
     
     
-    @objc public static func deviceType() -> DeviceModel {
+    public static func deviceType() -> DeviceModel {
         
         let deviceTypeString = UIDevice.current.model
         

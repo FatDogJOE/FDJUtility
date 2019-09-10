@@ -1,6 +1,6 @@
 {
   "name": "FDJUtility",
-  "version": "0.1.0",
+  "version": "0.1.1-beta.1",
   "summary": "A Utils Tools Library",
   "description": "TODO: Add long description of the pod here.",
   "homepage": "https://github.com/FatDogJOE/FDJUtility",
@@ -13,7 +13,7 @@
   },
   "source": {
     "git": "https://github.com/FatDogJOE/FDJUtility.git",
-    "tag": "0.1.0"
+    "tag": "0.1.1-beta.1"
   },
   "platforms": {
     "ios": "9.0"

@@ -8,7 +8,6 @@
 
 #import "OCViewController.h"
 #import <FDJUtility/OCSupport.h>
-#import <FDJUtility-Swift.h>
 
 @interface OCViewController ()
 
@@ -20,14 +19,12 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    NSDictionary * dic = [NSDictionary dictionary];
+   
+    NSString * test = @"123456";
     
-    dic.dicValue(@"dic").dicValue(@"test").stringValue(@"");
+    NSString * md5String = test.fdj_md5();
     
-    TaskOCOperation task = ^(TaskOCCompletion completion, NSDictionary * info) {
-    };
-    
-    [[FDJSerialTaskManager shared] OC_AddWithTask:task];
+    NSLog(@"");
 }
 
 /*
