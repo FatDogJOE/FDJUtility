@@ -40,11 +40,6 @@ TODO: Add long description of the pod here.
       app.dependency 'SAMKeychain', '~> 1.5.3'
   end
   
-  s.subspec 'OCSupport' do |ocsupport|
-      ocsupport.source_files = 'FDJUtility/Classes/OCSupport/**/*'
-      ocsupport.public_header_files = 'FDJUtility/Classes/OCSupport/**/*.{h}'
-  end
-  
   # s.resource_bundles = {
   #   'FDJUtility' => ['FDJUtility/Assets/*.png']
   # }

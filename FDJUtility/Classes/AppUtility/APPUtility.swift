@@ -32,7 +32,7 @@ public class APPUtility : NSObject {
         return ""
     }
     
-    @objc public static func syncPerformOnce(key:String, queue:DispatchQueue = DispatchQueue.main, excute:@escaping SyncOnceClosure) -> Bool {
+    @objc public static func syncOnce(key:String, queue:DispatchQueue = DispatchQueue.main, excute:@escaping SyncOnceClosure) -> Bool {
         
         let excuting = excutingDic[key] ?? false
         let performd = UserDefaults.standard.bool(forKey: key)
@@ -60,7 +60,7 @@ public class APPUtility : NSObject {
         
     }
     
-    @objc public static func asyncPerforOnce(key:String, queue:DispatchQueue = DispatchQueue.main, excute:@escaping AsyncOnceClosure) -> Bool {
+    @objc public static func asyncOnce(key:String, queue:DispatchQueue = DispatchQueue.main, excute:@escaping AsyncOnceClosure) -> Bool {
         
         let excuting = excutingDic[key] ?? false
         let performd = UserDefaults.standard.bool(forKey: key)
@@ -72,9 +72,7 @@ public class APPUtility : NSObject {
                 excutingDic[key] = false
                 objc_sync_exit(excutingDic)
                 
-                if finished {
-                    UserDefaults.standard.set(true, forKey: key)
-                }
+                UserDefaults.standard.set(finished, forKey: key)
             }
             
             queue.async {

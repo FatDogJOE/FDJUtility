@@ -32,11 +32,6 @@
           "~> 1.5.3"
         ]
       }
-    },
-    {
-      "name": "OCSupport",
-      "source_files": "FDJUtility/Classes/OCSupport/**/*",
-      "public_header_files": "FDJUtility/Classes/OCSupport/**/*.{h}"
     }
   ]
 }

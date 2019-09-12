@@ -50,11 +50,23 @@ public class DeviceUtility : NSObject {
     }
     
     public static func bangDevice() -> Bool {
-        if UIApplication.shared.statusBarFrame.height < 44 {
-            return false
+        
+        if #available(iOS 11.0, *) {
+            
+            if let delegate = UIApplication.shared.delegate, let window = delegate.window {
+                if window!.safeAreaInsets.bottom > 0.0 {
+                    return true
+                }else {
+                    return false
+                }
+            }else {
+                return false
+            }
+            
         }else {
-            return true
+            return false
         }
+    
     }
     
     public static func navigationBarHeight() -> CGFloat {

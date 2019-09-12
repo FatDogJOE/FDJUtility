@@ -7,7 +7,6 @@
 //
 
 #import "OCViewController.h"
-#import <FDJUtility/OCSupport.h>
 
 @interface OCViewController ()
 
@@ -18,13 +17,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    
-   
-    NSString * test = @"123456";
-    
-    NSString * md5String = test.fdj_md5();
-    
-    NSLog(@"");
 }
 
 /*

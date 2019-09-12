@@ -10,14 +10,28 @@ import UIKit
 public typealias FDJTaskCompletion = ([String:Any], Bool)->Void
 public typealias FDJTaskOperation = (@escaping FDJTaskCompletion, [String:Any])->Void
 
-public class FDJSerialTaskManager: NSObject {
+public class FDJSerialTask {
     
-    @objc public static let shared : FDJSerialTaskManager = { return FDJSerialTaskManager() }()
+    let operation : FDJTaskOperation
+    
+    init(operation:@escaping FDJTaskOperation) {
+        self.operation = operation
+    }
+    
+    public func execute(info:[String:Any], completion:@escaping FDJTaskCompletion) {
+        self.operation(completion, info)
+    }
+    
+}
+
+public class FDJSerialTaskQueue {
+    
+    public static let shared : FDJSerialTaskQueue = { return FDJSerialTaskQueue() }()
     
     var queue : DispatchQueue?
-    var currentTask : FDJTaskOperation?
+    var currentTask : FDJSerialTask?
     
-    private var waitingTasks : [FDJTaskOperation] = []
+    private var waitingTasks : [FDJSerialTask] = []
     
     
     private func next(info:[String:Any]) {
@@ -40,7 +54,7 @@ public class FDJSerialTaskManager: NSObject {
                 
             }
             
-            task(complection, info)
+            task.execute(info: info, completion: complection)
         } else {
             self.currentTask = nil
         }
@@ -57,7 +71,7 @@ public class FDJSerialTaskManager: NSObject {
         
     }
 
-    public func add(task:@escaping FDJTaskOperation) {
+    public func add(task:FDJSerialTask) {
         
         let shouldPerformNext = (waitingTasks.count == 0 && self.currentTask == nil)
         
@@ -74,7 +88,7 @@ public class FDJSerialTaskManager: NSObject {
         }
     }
     
-    public func batchAdd(tasks:[FDJTaskOperation]) {
+    public func batchAdd(tasks:[FDJSerialTask]) {
         
         let shouldPerformNext = (waitingTasks.count == 0 && self.currentTask == nil)
         
@@ -92,7 +106,7 @@ public class FDJSerialTaskManager: NSObject {
         
     }
     
-    public func insert(task:@escaping FDJTaskOperation) {
+    public func insert(task:FDJSerialTask) {
         
         let shouldPerformNext = (waitingTasks.count == 0 && self.currentTask == nil)
         
@@ -110,7 +124,7 @@ public class FDJSerialTaskManager: NSObject {
         
     }
     
-    public func batchInsert(tasks:[FDJTaskOperation]) {
+    public func batchInsert(tasks:[FDJSerialTask]) {
         
         let shouldPerformNext = (waitingTasks.count == 0 && self.currentTask == nil)
         
@@ -136,32 +150,6 @@ public class FDJSerialTaskManager: NSObject {
         
         objc_sync_exit(waitingTasks)
         
-    }
-    
-}
-
-extension FDJSerialTaskManager {
-    
-    @objc public func OC_BatchAdd(tasks:[Any]) {
-        
-        if let opTasks = (tasks as? [FDJTaskOperation]) {
-            self.batchAdd(tasks: opTasks)
-        }
-        
-    }
-    
-    @objc public func OC_BatchInsert(tasks:[Any]) {
-        if let opTasks = (tasks as? [FDJTaskOperation]) {
-            self.batchInsert(tasks: opTasks)
-        }
-    }
-    
-    @objc public func OC_Insert(task:@escaping FDJTaskOperation) {
-        self.insert(task: task)
-    }
-    
-    @objc public func OC_Add(task:@escaping FDJTaskOperation) {
-        self.add(task: task)
     }
     
 }
