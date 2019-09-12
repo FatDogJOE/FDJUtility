@@ -20,8 +20,8 @@ class ViewController: UIViewController {
         
         let md5Data = str.md5Data()
         
-        let bytes = md5Data.bytes()
-        let hex = md5Data.hex()
+        let bytes = md5Data.getBytes()
+        let hex = md5Data.getHex()
         
 //        let md5Str = str.md5()
 //        let sha1Str = str.sha1()

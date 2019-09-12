@@ -193,9 +193,9 @@ public extension Data {
     
 }
 
-extension Data {
+public extension Data {
     
-    func bytes() -> [UInt8] {
+    func getBytes() -> [UInt8] {
         
         var result : [UInt8] = []
         
@@ -215,7 +215,7 @@ extension Data {
         
     }
     
-    func hex() -> String {
+    func getHex() -> String {
         
         var result : String = ""
         

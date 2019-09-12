@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		0002A17B2185C85A885C710CA86C697D /* SAMKeychain.m in Sources */ = {isa = PBXBuildFile; fileRef = 2335217B4CBB7A5554281366B4BBC295 /* SAMKeychain.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
 		029500AD89DB649380832386C9A31BF0 /* ConstraintMakerEditable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0ECE002F115012B8BA714068638C43C /* ConstraintMakerEditable.swift */; };
+		04189F102329DBD500019F1A /* NSData+FDJUtility.h in Headers */ = {isa = PBXBuildFile; fileRef = 04189F0E2329DBD500019F1A /* NSData+FDJUtility.h */; };
+		04189F112329DBD500019F1A /* NSData+FDJUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = 04189F0F2329DBD500019F1A /* NSData+FDJUtility.m */; };
 		092CF72157FBEBD140794E0CE912E2DA /* ConstraintMakerFinalizable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34D90A9729595C4C707DBCB04268E6A9 /* ConstraintMakerFinalizable.swift */; };
 		0C1705520441A1DE33A3E9050A209358 /* OCTypes.h in Headers */ = {isa = PBXBuildFile; fileRef = 7914CA789D25054F44C4DF5ED316DC46 /* OCTypes.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		100BA19EDEEC084A225FF66E9B6F2D48 /* ColorUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2AF68CA4CD9C86856167C9E2810F169 /* ColorUtility.swift */; };
@@ -125,7 +127,9 @@
 		013D40B3D6CDA1EAA8C2E058FA28CBA0 /* Pods-FDJUtility_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-FDJUtility_Example-acknowledgements.plist"; sourceTree = "<group>"; };
 		02BDB8ED0D05FA10FA8D3D8FE00DD144 /* SnapKit-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SnapKit-dummy.m"; sourceTree = "<group>"; };
 		037DA72390BBA3303871A3591EB64D3B /* SnapKit-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "SnapKit-Info.plist"; sourceTree = "<group>"; };
-		0529E122D70A66AAFFB135A8BA4EE404 /* Pods_FDJUtility_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_FDJUtility_Example.framework; path = "Pods-FDJUtility_Example.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		04189F0E2329DBD500019F1A /* NSData+FDJUtility.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSData+FDJUtility.h"; sourceTree = "<group>"; };
+		04189F0F2329DBD500019F1A /* NSData+FDJUtility.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSData+FDJUtility.m"; sourceTree = "<group>"; };
+		0529E122D70A66AAFFB135A8BA4EE404 /* Pods_FDJUtility_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FDJUtility_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		055003605B178970B9725F68F9CE9233 /* ConstraintMakerExtendable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintMakerExtendable.swift; path = Source/ConstraintMakerExtendable.swift; sourceTree = "<group>"; };
 		1193C1387C1A3C3F790A4A76899C2CCE /* SAMKeychain.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SAMKeychain.h; path = Sources/SAMKeychain.h; sourceTree = "<group>"; };
 		128C5AA1F144B63870D7A532828021A0 /* SAMKeychain-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "SAMKeychain-Info.plist"; sourceTree = "<group>"; };
@@ -141,7 +145,7 @@
 		23EB1F99D15C7245AB7F90482DD8473F /* ConstraintInsets.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintInsets.swift; path = Source/ConstraintInsets.swift; sourceTree = "<group>"; };
 		28FC3A73D6CF5E76ED039CAA7E3EB886 /* Pods-FDJUtility_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-FDJUtility_Tests-dummy.m"; sourceTree = "<group>"; };
 		2BD50C6B8E7357D9B84EDF12953A64C6 /* ConstraintView+Extensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "ConstraintView+Extensions.swift"; path = "Source/ConstraintView+Extensions.swift"; sourceTree = "<group>"; };
-		305742877128B478DABBD51EEE602406 /* FDJUtility.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = FDJUtility.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		305742877128B478DABBD51EEE602406 /* FDJUtility.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; path = FDJUtility.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		333DF106E3C854E31C5A9E44FD943F56 /* ConstraintAttributes.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintAttributes.swift; path = Source/ConstraintAttributes.swift; sourceTree = "<group>"; };
 		33F5AA2FFE9C2CC814E38D229720780A /* LayoutConstraintItem.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LayoutConstraintItem.swift; path = Source/LayoutConstraintItem.swift; sourceTree = "<group>"; };
 		342CC5F9060F99AAC0B080EFE2009EC4 /* ConstraintMakerPriortizable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintMakerPriortizable.swift; path = Source/ConstraintMakerPriortizable.swift; sourceTree = "<group>"; };
@@ -155,7 +159,7 @@
 		401C8A4C8FA79ADDAD7A76E1C340F9F0 /* ConstraintView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintView.swift; path = Source/ConstraintView.swift; sourceTree = "<group>"; };
 		44418667CB5EC7B125A465A786B8A992 /* UILayoutSupport+Extensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UILayoutSupport+Extensions.swift"; path = "Source/UILayoutSupport+Extensions.swift"; sourceTree = "<group>"; };
 		48DF586B57847FAF2D65AB4378679D02 /* ConstraintRelatableTarget.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintRelatableTarget.swift; path = Source/ConstraintRelatableTarget.swift; sourceTree = "<group>"; };
-		4C9DBD533969C7F843FF77E226FCB443 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
+		4C9DBD533969C7F843FF77E226FCB443 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		4E6A348DF326CE41F3A94B7F764AC940 /* SAMKeychainQuery.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SAMKeychainQuery.h; path = Sources/SAMKeychainQuery.h; sourceTree = "<group>"; };
 		4F5119A73576AD23AFF14FDA30BFCD3A /* Pods-FDJUtility_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-FDJUtility_Example-umbrella.h"; sourceTree = "<group>"; };
 		53002CC2BD21ED96CFE5025652E03AB1 /* FDJUtility.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = FDJUtility.modulemap; sourceTree = "<group>"; };
@@ -165,7 +169,7 @@
 		5D152B4EA09F3605E6065F908A78EE9F /* FDJUtility-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "FDJUtility-prefix.pch"; sourceTree = "<group>"; };
 		5DDFAA050D9FB1AD3A3E565DC25DE73A /* ConstraintLayoutGuide.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintLayoutGuide.swift; path = Source/ConstraintLayoutGuide.swift; sourceTree = "<group>"; };
 		5E56DDB68F2D663AACFE50FB7AE2758A /* ConstraintInsetTarget.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintInsetTarget.swift; path = Source/ConstraintInsetTarget.swift; sourceTree = "<group>"; };
-		6369A5F36ACC4AD319F0B0412CC110E1 /* SAMKeychain.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = SAMKeychain.framework; path = SAMKeychain.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6369A5F36ACC4AD319F0B0412CC110E1 /* SAMKeychain.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SAMKeychain.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		66359AC435C63E17A2EAF09B0E050F4F /* Pods-FDJUtility_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-FDJUtility_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		6660B74D3D3629F3D0473D9D6030E1D8 /* ConstraintPriorityTarget.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintPriorityTarget.swift; path = Source/ConstraintPriorityTarget.swift; sourceTree = "<group>"; };
 		66FD350D3A04E56AF6F03328ACC2336B /* SAMKeychain.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SAMKeychain.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -178,19 +182,19 @@
 		7D0529BCFA167EE4C49DED5AD1CC903F /* Pods-FDJUtility_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-FDJUtility_Tests.modulemap"; sourceTree = "<group>"; };
 		7DA1197A20D9871ED627C13FCD830CE7 /* ConstraintMultiplierTarget.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintMultiplierTarget.swift; path = Source/ConstraintMultiplierTarget.swift; sourceTree = "<group>"; };
 		7F7B0F76F80EC29BE8EE97C5EC38DBEC /* SAMKeychain-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SAMKeychain-prefix.pch"; sourceTree = "<group>"; };
-		81E6AD73F0A9810F0F1FA49B7C8A6197 /* SnapKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = SnapKit.framework; path = SnapKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		81E6AD73F0A9810F0F1FA49B7C8A6197 /* SnapKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SnapKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		83E84E50CB3A891B3C3D85332A54A51C /* ArrayUtility.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ArrayUtility.swift; path = FDJUtility/Classes/Categories/ArrayUtility.swift; sourceTree = "<group>"; };
 		845DB0D470DF6DD93AF4023AEF9560AC /* Pods-FDJUtility_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-FDJUtility_Example.modulemap"; sourceTree = "<group>"; };
 		8C1F6B6EB49F77C04289EB5587DD4FB3 /* LayoutConstraint.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LayoutConstraint.swift; path = Source/LayoutConstraint.swift; sourceTree = "<group>"; };
 		8F2B1508B8561C23F887CD7B0042EF48 /* ConstraintLayoutGuideDSL.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintLayoutGuideDSL.swift; path = Source/ConstraintLayoutGuideDSL.swift; sourceTree = "<group>"; };
 		902F03ECFEAE35EBDE68831FD2EDC2BA /* ConstraintDescription.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintDescription.swift; path = Source/ConstraintDescription.swift; sourceTree = "<group>"; };
 		9050359FCD51E8150454A94B90E5CA6A /* Pods-FDJUtility_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-FDJUtility_Tests-umbrella.h"; sourceTree = "<group>"; };
-		921F08B136A50CEAB9EBBEEF88C03C64 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
+		921F08B136A50CEAB9EBBEEF88C03C64 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		936742C1F708EE986EAE721530A8C9A3 /* ConstraintPriority.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintPriority.swift; path = Source/ConstraintPriority.swift; sourceTree = "<group>"; };
 		95E79B5AA877239937CD17969C91013A /* ConstraintItem.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintItem.swift; path = Source/ConstraintItem.swift; sourceTree = "<group>"; };
 		9A21D7C9CF654ED5B34F96F2FD2294E5 /* Pods-FDJUtility_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-FDJUtility_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		9BB4204533DEAA42845E0A3E147131AC /* Pods-FDJUtility_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-FDJUtility_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
-		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		A0861010D44DB0CE8A07700F24267D9D /* ConstraintConstantTarget.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintConstantTarget.swift; path = Source/ConstraintConstantTarget.swift; sourceTree = "<group>"; };
 		A0ECE002F115012B8BA714068638C43C /* ConstraintMakerEditable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintMakerEditable.swift; path = Source/ConstraintMakerEditable.swift; sourceTree = "<group>"; };
 		A3A15313A8F0157B81C2505DC6DB654B /* FDJUtility-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "FDJUtility-umbrella.h"; sourceTree = "<group>"; };
@@ -212,7 +216,7 @@
 		CF1C3250FD86C01F78AFF9CDEE7CBB6B /* SAMKeychain-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SAMKeychain-dummy.m"; sourceTree = "<group>"; };
 		D070A7D9CD99C665607A02B75CD0BFE0 /* SAMKeychain.bundle */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "wrapper.plug-in"; name = SAMKeychain.bundle; path = Support/SAMKeychain.bundle; sourceTree = "<group>"; };
 		D2951E3517ADAC7BEB930622B2C1C889 /* Pods-FDJUtility_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-FDJUtility_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
-		DA8929682A019C7BF5E9749427E2D5DB /* Pods_FDJUtility_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_FDJUtility_Tests.framework; path = "Pods-FDJUtility_Tests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		DA8929682A019C7BF5E9749427E2D5DB /* Pods_FDJUtility_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FDJUtility_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE0E1409A27BF245A4EC31C9F7D86841 /* ConstraintLayoutSupportDSL.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintLayoutSupportDSL.swift; path = Source/ConstraintLayoutSupportDSL.swift; sourceTree = "<group>"; };
 		DE6A4EE7BE76844FE0C02419F66345C5 /* SnapKit-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SnapKit-umbrella.h"; sourceTree = "<group>"; };
 		DEAB0E20652C4AB2E0C4019096CAD071 /* Pods-FDJUtility_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-FDJUtility_Example-frameworks.sh"; sourceTree = "<group>"; };
@@ -224,7 +228,7 @@
 		F26F5E842537488610DEE97966FD8F52 /* FDJUtility.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = FDJUtility.xcconfig; sourceTree = "<group>"; };
 		F2771422D6EE31A7881A9E9D2991FB45 /* ConstraintLayoutGuide+Extensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "ConstraintLayoutGuide+Extensions.swift"; path = "Source/ConstraintLayoutGuide+Extensions.swift"; sourceTree = "<group>"; };
 		F2AA4FD92BCD4FE71718EDAA0703F624 /* Pods-FDJUtility_Tests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-FDJUtility_Tests-Info.plist"; sourceTree = "<group>"; };
-		FB94CF82AB8945855904D53ACA22DE04 /* FDJUtility.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = FDJUtility.framework; path = FDJUtility.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FB94CF82AB8945855904D53ACA22DE04 /* FDJUtility.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FDJUtility.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FC18EC6BE4B737E4D3D1302ED6B3C7AE /* Pods-FDJUtility_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-FDJUtility_Example-dummy.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -341,6 +345,8 @@
 				B83CC9AC2FB87564372030D4919A3E6F /* NSString+FDJUtility.m */,
 				34B74DE98501C1CDE226EED897B1D665 /* UIColor+FDJUtility.h */,
 				C90CF83923E4DFC6D8CB74F9E872F2AB /* UIColor+FDJUtility.m */,
+				04189F0E2329DBD500019F1A /* NSData+FDJUtility.h */,
+				04189F0F2329DBD500019F1A /* NSData+FDJUtility.m */,
 			);
 			name = Categories;
 			path = FDJUtility/Classes/OCSupport/Categories;
@@ -409,7 +415,6 @@
 				44418667CB5EC7B125A465A786B8A992 /* UILayoutSupport+Extensions.swift */,
 				EBCCF1287EB7800AF4F3F9661264D42D /* Support Files */,
 			);
-			name = SnapKit;
 			path = SnapKit;
 			sourceTree = "<group>";
 		};
@@ -549,7 +554,6 @@
 				EF74E7A8DE005C366F13CD12F0BE7B58 /* Resources */,
 				43AF1E64EED2CACBD0BBA936A9F07B05 /* Support Files */,
 			);
-			name = SAMKeychain;
 			path = SAMKeychain;
 			sourceTree = "<group>";
 		};
@@ -568,6 +572,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				04189F102329DBD500019F1A /* NSData+FDJUtility.h in Headers */,
 				808BD8F39010535CBA37E870487783D8 /* FDJUtility-umbrella.h in Headers */,
 				BBDAF70A5E14299BD49CDFE467364267 /* NSDictionary+FDJUtility.h in Headers */,
 				8862FB786FE95F78602F20FFE01D91F7 /* NSString+FDJUtility.h in Headers */,
@@ -789,6 +794,7 @@
 				7A4ED074BC597C8AA398BBFF26D1C97E /* StringUtility.swift in Sources */,
 				92564A71EB1DDE62DD10E5FC7E1AB4B2 /* UIColor+FDJUtility.m in Sources */,
 				2A73B7F9D2B28E9BD8C9A6F477AA417A /* ViewUtility.swift in Sources */,
+				04189F112329DBD500019F1A /* NSData+FDJUtility.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1176,8 +1182,7 @@
 				MTL_FAST_MATH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRIP_INSTALLED_PRODUCT = NO;
-				SWIFT_COMPILATION_MODE = wholemodule;
-				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_VERSION = 5.0;
 				SYMROOT = "${SRCROOT}/../build";
 			};

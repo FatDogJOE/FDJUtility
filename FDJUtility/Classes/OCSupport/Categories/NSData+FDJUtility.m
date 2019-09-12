@@ -1,20 +1,19 @@
 //
-//  NSString+FDJUtility.m
+//  NSData+FDJUtility.m
 //  FDJUtility
 //
-//  Created by mac on 2019/9/10.
+//  Created by mac on 2019/9/12.
 //
 
-#import "NSString+FDJUtility.h"
+#import "NSData+FDJUtility.h"
 #import <CommonCrypto/CommonCrypto.h>
 
-@implementation NSString (FDJUtility)
+@implementation NSData (FDJUtility)
 
-
-#pragma mark - String
 - (NSString * (^)(void))fdj_md5 {
     return ^NSString * {
-        const char * plain = [self UTF8String];
+        const char * plain = [self bytes];
+        
         unsigned char * digest = malloc(CC_MD5_DIGEST_LENGTH);
         
         CC_MD5(plain, (CC_LONG)strlen(plain), digest);
@@ -39,7 +38,7 @@
 
 - (NSString * (^)(void))fdj_sha1 {
     return ^NSString * {
-        const char * plain = [self UTF8String];
+        const char * plain = self.bytes;
         unsigned char * digest = malloc(CC_SHA1_DIGEST_LENGTH);
         
         CC_SHA1(plain, (CC_LONG)strlen(plain), digest);
@@ -64,7 +63,7 @@
 
 - (NSString * (^)(void))fdj_sha256 {
     return ^NSString * {
-        const char * plain = [self UTF8String];
+        const char * plain = self.bytes;
         unsigned char * digest = malloc(CC_SHA256_DIGEST_LENGTH);
         
         CC_SHA256(plain, (CC_LONG)strlen(plain), digest);
@@ -89,7 +88,7 @@
 
 - (NSString * (^)(void))fdj_sha512 {
     return ^NSString * {
-        const char * plain = [self UTF8String];
+        const char * plain = self.bytes;
         unsigned char * digest = malloc(CC_SHA512_DIGEST_LENGTH);
         
         CC_SHA512(plain, (CC_LONG)strlen(plain), digest);
@@ -114,17 +113,14 @@
 
 - (NSString * (^)(void))fdj_base64 {
     return ^NSString * {
-        NSData * data = [self dataUsingEncoding:NSUTF8StringEncoding];
-        return [data base64EncodedStringWithOptions:0];
+        return [self base64EncodedStringWithOptions:0];;
     };
 }
 
-#pragma mark - Data
-
 - (NSData * (^)(void))fdj_md5Data {
     return ^NSData * {
+        const char * plain = [self bytes];
         
-        const char * plain = [self UTF8String];
         unsigned char * digest = malloc(CC_MD5_DIGEST_LENGTH);
         
         CC_MD5(plain, (CC_LONG)strlen(plain), digest);
@@ -134,10 +130,9 @@
         return resultData;
     };
 }
-
 - (NSData * (^)(void))fdj_sha1Data {
     return ^NSData * {
-        const char * plain = [self UTF8String];
+        const char * plain = self.bytes;
         unsigned char * digest = malloc(CC_SHA1_DIGEST_LENGTH);
         
         CC_SHA1(plain, (CC_LONG)strlen(plain), digest);
@@ -147,10 +142,9 @@
         return resultData;
     };
 }
-
 - (NSData * (^)(void))fdj_sha256Data {
     return ^NSData * {
-        const char * plain = [self UTF8String];
+        const char * plain = self.bytes;
         unsigned char * digest = malloc(CC_SHA256_DIGEST_LENGTH);
         
         CC_SHA256(plain, (CC_LONG)strlen(plain), digest);
@@ -160,10 +154,9 @@
         return resultData;
     };
 }
-
 - (NSData * (^)(void))fdj_sha512Data {
     return ^NSData * {
-        const char * plain = [self UTF8String];
+        const char * plain = self.bytes;
         unsigned char * digest = malloc(CC_SHA512_DIGEST_LENGTH);
         
         CC_SHA512(plain, (CC_LONG)strlen(plain), digest);
@@ -173,11 +166,9 @@
         return resultData;
     };
 }
-
 - (NSData * (^)(void))fdj_base64Data {
     return ^NSData * {
-        NSData * data = [self dataUsingEncoding:NSUTF8StringEncoding];
-        return data;
+        return [self base64EncodedDataWithOptions:0];
     };
 }
 
