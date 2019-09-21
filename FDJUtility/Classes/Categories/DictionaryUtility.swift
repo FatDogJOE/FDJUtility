@@ -7,7 +7,7 @@
 
 import Foundation
 
-extension Dictionary where Key==String, Value==Any  {
+public extension Dictionary where Key==String, Value==Any  {
     
     func string(for key:String) -> String? {
         
