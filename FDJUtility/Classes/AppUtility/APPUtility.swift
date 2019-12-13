@@ -53,9 +53,9 @@ public class APPUtility : NSObject {
                 objc_sync_exit(excutingDic)
                 
             }
-            return true
-        }else {
             return false
+        }else {
+            return true
         }
         
     }
@@ -84,11 +84,11 @@ public class APPUtility : NSObject {
                 
             }
             
-            return true
+            return false
             
         }else {
             
-            return false
+            return true
             
         }
         
