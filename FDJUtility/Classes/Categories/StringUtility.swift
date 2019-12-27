@@ -159,6 +159,19 @@ public extension String {
     }
 }
 
+public extension String {
+    
+    func toAttribute(size:Float, hex:UInt32, alpha:Float = 1, weight:UIFont.Weight = .regular, lineSpacing:Float = 2) -> NSAttributedString {
+        
+        let paragraph = NSMutableParagraphStyle()
+        paragraph.lineSpacing = CGFloat(lineSpacing)
+        
+        let attributes = [NSAttributedString.Key.font:UIFont.systemFont(ofSize: CGFloat(size), weight: weight), NSAttributedString.Key.foregroundColor:UIColor.hex(hex: hex), NSAttributedString.Key.paragraphStyle:paragraph]
+        return NSAttributedString(string: self, attributes: attributes)
+    }
+    
+}
+
 public extension NSAttributedString {
     
     convenience init(string:String, font:UIFont, color:UIColor) {
