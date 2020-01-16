@@ -53,8 +53,8 @@ public class DeviceUtility : NSObject {
         
         if #available(iOS 11.0, *) {
             
-            if let delegate = UIApplication.shared.delegate, let window = delegate.window {
-                if window!.safeAreaInsets.bottom > 0.0 {
+            if let window = UIApplication.shared.keyWindow {
+                if window.safeAreaInsets.bottom > 0.0 {
                     return true
                 }else {
                     return false

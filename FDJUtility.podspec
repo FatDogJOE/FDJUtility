@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'FDJUtility'
-  s.version          = '0.1.2-beta.3'
+  s.version          = '0.1.2-beta.4'
   s.summary          = 'A Utils Tools Library'
 
 # This description is used to generate tags and improve search results.

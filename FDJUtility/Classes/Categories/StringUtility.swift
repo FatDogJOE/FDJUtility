@@ -161,12 +161,12 @@ public extension String {
 
 public extension String {
     
-    func toAttribute(size:Float, hex:UInt32, alpha:Float = 1, weight:UIFont.Weight = .regular, lineSpacing:Float = 2) -> NSAttributedString {
+    func toAttribute(size:Float, hex:UInt32, alpha:Float = 1, weight:UIFont.Weight = .regular, lineSpacing:Float = 2, layoutVertical:Bool = false) -> NSAttributedString {
         
         let paragraph = NSMutableParagraphStyle()
         paragraph.lineSpacing = CGFloat(lineSpacing)
         
-        let attributes = [NSAttributedString.Key.font:UIFont.systemFont(ofSize: CGFloat(size), weight: weight), NSAttributedString.Key.foregroundColor:UIColor.hex(hex: hex), NSAttributedString.Key.paragraphStyle:paragraph]
+        let attributes = [NSAttributedString.Key.font:UIFont.systemFont(ofSize: CGFloat(size), weight: weight), NSAttributedString.Key.foregroundColor:UIColor.hex(hex: hex), NSAttributedString.Key.paragraphStyle:paragraph,NSAttributedString.Key.verticalGlyphForm:NSNumber(value: layoutVertical ? 1 : 0)]
         return NSAttributedString(string: self, attributes: attributes)
     }
     

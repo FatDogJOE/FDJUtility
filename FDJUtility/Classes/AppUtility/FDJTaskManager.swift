@@ -7,18 +7,18 @@
 
 import UIKit
 
-public typealias FDJTaskCompletion = ([String:Any], Bool)->Void
-public typealias FDJTaskOperation = (@escaping FDJTaskCompletion, [String:Any])->Void
+public typealias FDJTaskCompletion = ([String:Any]?, Bool)->Void
+public typealias FDJTaskOperation = (@escaping FDJTaskCompletion, [String:Any]?)->Void
 
 public class FDJSerialTask {
     
-    let operation : FDJTaskOperation
+    public let operation : FDJTaskOperation
     
-    init(operation:@escaping FDJTaskOperation) {
+    public init(operation:@escaping FDJTaskOperation) {
         self.operation = operation
     }
     
-    public func execute(info:[String:Any], completion:@escaping FDJTaskCompletion) {
+    public func execute(info:[String:Any]?, completion:@escaping FDJTaskCompletion) {
         self.operation(completion, info)
     }
     
@@ -34,7 +34,7 @@ public class FDJSerialTaskQueue {
     private var waitingTasks : [FDJSerialTask] = []
     
     
-    private func next(info:[String:Any]) {
+    private func next(info:[String:Any]?) {
         
         objc_sync_enter(waitingTasks)
         
@@ -63,7 +63,7 @@ public class FDJSerialTaskQueue {
         
     }
     
-    private func performNext(info:[String:Any]) {
+    private func performNext(info:[String:Any]?) {
         
         (self.queue ?? DispatchQueue.main).async {
             self.next(info: info)
